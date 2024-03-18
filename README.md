@@ -53,9 +53,9 @@ Ky dataset përmbanë 36 kolona:
 
 # Atributet e datasetit
 
-Attributet kategorike:
+***Attributet kategorike:***
 
--Nominal:
+**Nominal:**
 Brand
 Model
 Engine
@@ -65,7 +65,7 @@ Drivetrain
 Interior_color
 Exterior_color
 
--Ordinal:
+**Ordinal:**
 Damaged
 First_owner
 Personal_use
@@ -89,16 +89,16 @@ Usb_port
 Heated_Seats
  
 
-Numerical Attributes:
+***Numerical Attributes:***
 
--Interval:
+**Interval:**
 Year
 Mileage
 Engine_size
 Min_mpg
 Max_mpg
 
--Ratio:  
+**Ratio:**
 Price
 
 
