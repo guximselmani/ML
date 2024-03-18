@@ -51,8 +51,61 @@ Ky dataset përmbanë 36 kolona:
 35) Exterior_color: Ngjyra e jashtme e makinës
 36) Price: Çmimi
 
+# Atributet e datasetit
 
-# Paraprocesimi 
+Attributet kategorike:
+
+-Nominal:
+Brand
+Model
+Engine
+Transmission
+Fuel type
+Drivetrain
+Interior_color
+Exterior_color
+
+-Ordinal:
+Damaged
+First_owner
+Personal_use
+Turbo
+Alloy_wheels
+Adaptive_cruise
+Navigation_system
+Power_liftgate
+Backup_camera
+Keyless_start
+Remote_start
+Sunroof
+Automatic_emergency_braking
+Stability_control
+Leather_seats
+Memory_seats
+Third_row_seating
+Apple_car_play
+Bluetooth
+Usb_port
+Heated_Seats
+ 
+
+Numerical Attributes:
+
+-Interval:
+Year
+Mileage
+Engine_size
+Min_mpg
+Max_mpg
+
+-Ratio:  
+Price
+
+
+# Kualiteti i të dhënave
+
+
+
 
 
 
