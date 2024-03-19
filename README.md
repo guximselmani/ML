@@ -53,101 +53,101 @@ Ky dataset përmbanë 36 kolona:
 
 # Atributet e datasetit
 
-***Attributet kategorike:***
+***Attributet kategorike:***  
 
-**Nominal:**
-Brand
-Model
-Engine
-Transmission
-Fuel type
-Drivetrain
-Interior_color
-Exterior_color
+**Nominal:**  
+Brand  
+Model  
+Engine  
+Transmission  
+Fuel type  
+Drivetrain  
+Interior_color  
+Exterior_color  
 
-**Ordinal:**
-Damaged
-First_owner
-Personal_use
-Turbo
-Alloy_wheels
-Adaptive_cruise
-Navigation_system
-Power_liftgate
-Backup_camera
-Keyless_start
-Remote_start
-Sunroof
-Automatic_emergency_braking
-Stability_control
-Leather_seats
-Memory_seats
-Third_row_seating
-Apple_car_play
-Bluetooth
-Usb_port
-Heated_Seats
+**Ordinal:**  
+Damaged  
+First_owner  
+Personal_use  
+Turbo  
+Alloy_wheels  
+Adaptive_cruise  
+Navigation_system  
+Power_liftgate  
+Backup_camera  
+Keyless_start  
+Remote_start  
+Sunroof  
+Automatic_emergency_braking  
+Stability_control  
+Leather_seats  
+Memory_seats  
+Third_row_seating  
+Apple_car_play  
+Bluetooth  
+Usb_port  
+Heated_Seats  
  
 
-***Atributet numerike:***
+***Atributet numerike:***  
 
-**Interval:**
-Year
-Mileage
-Engine_size
-Min_mpg
-Max_mpg
+**Interval:**  
+Year  
+Mileage  
+Engine_size  
+Min_mpg  
+Max_mpg  
 
-**Ratio:**
-Price
+**Ratio:**  
+Price  
 
 
-# Kualiteti i të dhënave
+# Kualiteti i të dhënave  
 
-**Vlerat null**
+**Vlerat null**  
 
-brand                             3
-model                             3
-year                              3
-mileage                           3
-engine                           54
-engine_size                    1534
-transmission                    123
-automatic_transmission            3
-fuel_type                         3
-drivetrain                        3
-min_mpg                        3752
-max_mpg                        3752
-damaged                         224
-first_owner                     395
-personal_using                  246
-turbo                             3
-alloy_wheels                      3
-adaptive_cruise_control           3
-navigation_system                 3
-power_liftgate                    3
-backup_camera                     3
-keyless_start                     3
-remote_start                      3
-sunroof/moonroof                  3
-automatic_emergency_braking       3
-stability_control                 3
-leather_seats                     3
-memory_seat                       3
-third_row_seating                 3
-apple_car_play/android_auto       3
-bluetooth                         3
-usb_port                          3
-heated_seats                      3
-interior_color                 1478
-exterior_color                  270
-price                             3
+brand:                            3  vlera null  
+model:                            3  vlera null  
+year:                              3  vlera null  
+mileage:                           3  vlera null  
+engine:                            54  vlera null  
+engine_size:                     1534  vlera null  
+transmission:                     123  vlera null  
+automatic_transmission:             3  vlera null  
+fuel_type:                          3  vlera null  
+drivetrain:                         3  vlera null  
+min_mpg:                         3752  vlera null  
+max_mpg:                         3752  vlera null  
+damaged:                          224  vlera null  
+first_owner:                      395  vlera null  
+personal_using:                   246  vlera null  
+turbo:                              3  vlera null  
+alloy_wheels:                       3  vlera null  
+adaptive_cruise_control:            3  vlera null  
+navigation_system:                  3  vlera null  
+power_liftgate:                     3  vlera null  
+backup_camera:                      3  vlera null  
+keyless_start:                      3  vlera null  
+remote_start:                       3  vlera null  
+sunroof/moonroof:                   3  vlera null  
+automatic_emergency_braking:        3  vlera null  
+stability_control:                  3  vlera null  
+leather_seats:                      3  vlera null  
+memory_seat:                        3  vlera null  
+third_row_seating:                  3  vlera null  
+apple_car_play/android_auto:        3  vlera null  
+bluetooth:                          3  vlera null  
+usb_port:                           3  vlera null  
+heated_seats:                       3  vlera null  
+interior_color:                  1478  vlera null  
+exterior_color:                   270  vlera null  
+price:                              3  vlera null  
 
 <img width="323" alt="Screenshot 2024-03-19 at 22 32 12" src="https://github.com/guximselmani/ML/assets/44524736/8b1f74cb-d2f3-494a-aafc-5db88e892a24">
 
 
-**Vlerat duplikate**
-0
+**Vlerat duplikate**  
+0  
 <img width="323" alt="Screenshot 2024-03-19 at 22 29 53" src="https://github.com/guximselmani/ML/assets/44524736/d8d41a7e-a80e-4af2-a274-40dc8534b334">
 
 
