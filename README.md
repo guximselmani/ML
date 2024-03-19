@@ -104,8 +104,51 @@ Price
 
 # Kualiteti i të dhënave
 
+**Vlerat null**
+
+brand                             3
+model                             3
+year                              3
+mileage                           3
+engine                           54
+engine_size                    1534
+transmission                    123
+automatic_transmission            3
+fuel_type                         3
+drivetrain                        3
+min_mpg                        3752
+max_mpg                        3752
+damaged                         224
+first_owner                     395
+personal_using                  246
+turbo                             3
+alloy_wheels                      3
+adaptive_cruise_control           3
+navigation_system                 3
+power_liftgate                    3
+backup_camera                     3
+keyless_start                     3
+remote_start                      3
+sunroof/moonroof                  3
+automatic_emergency_braking       3
+stability_control                 3
+leather_seats                     3
+memory_seat                       3
+third_row_seating                 3
+apple_car_play/android_auto       3
+bluetooth                         3
+usb_port                          3
+heated_seats                      3
+interior_color                 1478
+exterior_color                  270
+price                             3
+
+<img width="323" alt="Screenshot 2024-03-19 at 22 32 12" src="https://github.com/guximselmani/ML/assets/44524736/8b1f74cb-d2f3-494a-aafc-5db88e892a24">
 
 
+**Vlerat duplikate**
+0
+<img width="323" alt="Screenshot 2024-03-19 at 22 29 53" src="https://github.com/guximselmani/ML/assets/44524736/d8d41a7e-a80e-4af2-a274-40dc8534b334">
 
 
 
