@@ -89,7 +89,7 @@ Usb_port
 Heated_Seats
  
 
-***Numerical Attributes:***
+***Atributet numerike:***
 
 **Interval:**
 Year
