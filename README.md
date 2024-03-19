@@ -103,6 +103,9 @@ Price
 
 
 # Kualiteti i të dhënave  
+**Info rreth datasetit**  
+<img width="728" alt="Screenshot 2024-03-19 at 22 50 13" src="https://github.com/guximselmani/ML/assets/44524736/b72be16f-7fe5-44a0-9e42-bee0c677af22">
+
 
 **Vlerat null**  
 
