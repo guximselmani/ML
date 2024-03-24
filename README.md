@@ -311,20 +311,31 @@ year: 819
 mileage: 446
 price: 1086
 ```
+
+![Bildschirmfoto 2024-03-24 um 22 32 16](https://github.com/guximselmani/ML/assets/44524736/2d76d2b8-db75-46cd-a152-65d120b98372)
+![Bildschirmfoto 2024-03-24 um 22 32 41](https://github.com/guximselmani/ML/assets/44524736/e75bb8ee-30e6-4ac9-bb95-d9ec9479fe5f)
+![Bildschirmfoto 2024-03-24 um 22 33 01](https://github.com/guximselmani/ML/assets/44524736/109a45ce-b2dd-47da-8ce5-2c0f8c5031a6)
+
 pas largimit të tyre:
 ```
 Shape of dataset before removing outliers: (20774, 31)
 Shape of dataset after removing outliers: (18571, 31)
 ```
+![Bildschirmfoto 2024-03-24 um 22 33 36](https://github.com/guximselmani/ML/assets/44524736/b02fc55e-eaa4-4137-88b5-699d0078642b)
+![Bildschirmfoto 2024-03-24 um 22 34 02](https://github.com/guximselmani/ML/assets/44524736/01a244fc-cacb-4936-9b10-81a734e3b78e)
+![Bildschirmfoto 2024-03-24 um 22 34 24](https://github.com/guximselmani/ML/assets/44524736/9fdcee73-7fa6-445c-9708-62c230e085c4)
+
+
+
 
 **Enkodimi i variablava kategorike**
 Variablat kategorikë si interior_color, exterior_color, brand dhe model janë të enkoduara duke përdorur metodën fit_transform() të LabelEncoder. Kjo i konverton etiketat kategorike në paraqitje numerike.
  
 
- # Selektimi i vecorive dhe variabla e targetit
+# Selektimi i veçorive dhe variabla e targetit
 
- X krijohet duke larguar variablin e targetit (first_owner) nga grupi i të dhënave. Kjo do të përmbajë të gjitha tiparet e përdorura për predikim.
-Y i është caktuar ndryshorja e targetit (first_owner). Kjo do të përdoret për të trajnuar modelin për të parashikuar variablin e synuar bazuar në veçoritë.
+X krijohet duke larguar variablin e targetit *first_owner* nga grupi i të dhënave. Kjo do të përmbajë të gjitha tiparet e përdorura për predikim.
+Y i është caktuar ndryshorja e targetit *first_owner*. Kjo do të përdoret për të trajnuar modelin për të parashikuar variablin e synuar bazuar në veçoritë.
 
 # Ndarja e të dhënave në grupe trajnimi dhe testimi
 *Në përgjithësi, ky segment kodi përgatit grupin e të dhënave për trajnimin e një modeli RandomForestClassifier duke koduar variabla kategorike, duke e ndarë grupin e të dhënave në grupe trajnimi dhe testimi dhe duke zgjedhur veçoritë e duhura dhe variablin e synuar.*
