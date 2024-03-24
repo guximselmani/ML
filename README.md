@@ -9,6 +9,11 @@ Objektivi kryesor i këtij projekti është të demonstrojë në përgjithësi p
 # Hyrje
 Ky dataset përmban një grup të të dhënave  për  makina të përdorura. Ai përfshin veçori të ndryshme të makinave si marka, modeli, viti, kilometrazhi, detajet e motorit, lloji i transmisionit, lloji i karburantit, çmimi, lëvizja dhe më shumë. Ai përfshin informacion mbi atributet e ndryshme të automjeteve dhe ndikimin e tyre, të cilat mund të përdoren për të marrë vendime të informuara në lidhje pronësine e automjetit. Pra qëllimi i këtij grupi të dhënash është të vlerësojë performancën e modeleve të mësimit të makinerive për të parashikuar nësë pronari i makinës, është apo nuk është pronari i parë i tij.
 
+# Integrimi i të dhënave
+Në këtë punim, integrimi i të dhënave është thelbësore për të ndërtuar një dataset të unifikuar për analizë
+
+Ne i bashkojmë këto nën-grupe të dhënash duke përdorur librarinë Pandas, veçanërisht funksionin concat(). Duke bashkuar këto nën-grupe të dhënash, ne krijojmë një grup të dhënash të vetme,  'combined_dataset.csv'. Ky grup të dhënash shërben si bazë për analizën dhe detyrat tona të modelimit të mëvonshëm, duke na mundësuar të nxjerrim njohuri më të forta dhe të marrim vendime të informuara.
+
 # Përshkrimi i datasetit
 Dataseti i projektit është marrë nga Kaggle: 
 https://www.kaggle.com/datasets/tugberkkaran/used-car-listings-features-and-prices-carscom
@@ -338,8 +343,36 @@ test_size=0.2: Ky parametër specifikon që 20% e të dhënave do të përdoren 
 random_state=42: Ky parametër siguron riprodhueshmëri duke vendosur një bazë për gjeneratorin e numrave të rastësishëm.
 
 
+```
+# Number of rows in the original dataset
+total_rows = len(dataset)
 
- 
+# Number of rows for training
+rows_training = len(X_train)
+
+# Number of rows for testing
+rows_testing = len(X_test)
+
+print("Total rows:", total_rows)
+print("Rows for training:", rows_training)
+print("Rows for testing:", rows_testing)
+```
+![Bildschirmfoto 2024-03-24 um 22 12 13](https://github.com/guximselmani/ML/assets/44524736/140f78c9-6bd3-4422-b142-5cd133e6183c)
+
+# Pse algoritmi Random Forest Classifier?
+*Random Forest* është një algoritëm që mund përdorët për detyra klasifikimi si në rastin tonë nëse është pronari i parë apo jo,
+avantazheve që ofron ky algoritem:
+
+*Saktësia e lartë:* Pylli i rastësishëm tenton të sigurojë saktësi të lartë në krahasim me shumë algoritme të tjera. Funksionon mirë si me veçoritë numerike ashtu edhe me ato kategorike dhe mund të trajtojë një numër të madh të variablave hyrëse pa u përshtatur shumë.
+
+
+*E qëndrueshme ndaj Overfitting:* Random Forest është më pak i prirur ndaj mbi pe4rshtatjes në krahasim me decision trees. Duke trajnuar shumë pemë në nëngrupe të ndryshme të të dhënave dhe duke mesatarizuar parashikimet e tyre, zvogëlon rrezikun e përshtatjes së tepërt ndaj zhurmës në të dhënat e trajnimit.
+
+*Trajton marrëdhëniet jo-lineare:* Random Forest mund të kapë marrëdhënie komplekse jolineare midis veçorive dhe targetit së synuar. Ai e bën këtë duke marrë parasysh kufijtë e shumëfishtë të vendimeve të krijuara nga pemë të ndryshme, duke e lejuar atë të modelojë modele të ndërlikuara në të dhëna.
+
+*Trajton vlerat që mungojnë*: Random Forest mund të trajtojë vlerat që mungojnë në grupin e të dhënave. Ai e arrin këtë duke mesatarizuar parashikimet nga shumë pemë, ku çdo pemë mund të trajtojë vlerat që mungojnë në mënyrë të pavarur gjatë trajnimit dhe parashikimit.
+
+*Rëndësia e veçorive:* Random Forest ofron një masë të rëndësisë së veçorive, e cila tregon kontributin e çdo veçori në performancën parashikuese të modelit. Ky informacion mund të jetë i dobishëm për zgjedhjen e veçorive dhe për të kuptuar marrëdhëniet themelore në të dhëna.
 
 
 Faza II: Analiza dhe evaluimi
