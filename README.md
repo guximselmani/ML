@@ -102,57 +102,54 @@ Max_mpg
 Price  
 
 # Tipet e të dhënave  
+*Trajtimi i tipeve do të përshkruhet më detajisht në vijim.*  
 ```
 print(dataset.dtypes)
 ```
 ![data types](https://github.com/guximselmani/ML/assets/44524736/050afeae-cc08-485a-b6c3-804faeb60d82)
 
-  
+   
+# Rreshtat duplikat  
+**Verifikimi i rreshtave duplikat:** 
+Duke përdorur këtë funksion, kemi ardh në përfundim se nuk kemi vlera duplikate
+```
+dataset.duplicated().sum()
+```
 
-**Vlerat null**  
+<img width="323" alt="Screenshot 2024-03-19 at 22 29 53" src="https://github.com/guximselmani/ML/assets/44524736/d8d41a7e-a80e-4af2-a274-40dc8534b334">  
 
-brand:                            3  vlera null  
-model:                            3  vlera null  
-year:                              3  vlera null  
-mileage:                           3  vlera null  
-engine:                            54  vlera null  
-engine_size:                     1534  vlera null  
-transmission:                     123  vlera null  
-automatic_transmission:             3  vlera null  
-fuel_type:                          3  vlera null  
-drivetrain:                         3  vlera null  
-min_mpg:                         3752  vlera null  
-max_mpg:                         3752  vlera null  
-damaged:                          224  vlera null  
-first_owner:                      395  vlera null  
-personal_using:                   246  vlera null  
-turbo:                              3  vlera null  
-alloy_wheels:                       3  vlera null  
-adaptive_cruise_control:            3  vlera null  
-navigation_system:                  3  vlera null  
-power_liftgate:                     3  vlera null  
-backup_camera:                      3  vlera null  
-keyless_start:                      3  vlera null  
-remote_start:                       3  vlera null  
-sunroof/moonroof:                   3  vlera null  
-automatic_emergency_braking:        3  vlera null  
-stability_control:                  3  vlera null  
-leather_seats:                      3  vlera null  
-memory_seat:                        3  vlera null  
-third_row_seating:                  3  vlera null  
-apple_car_play/android_auto:        3  vlera null  
-bluetooth:                          3  vlera null  
-usb_port:                           3  vlera null  
-heated_seats:                       3  vlera null  
-interior_color:                  1478  vlera null  
-exterior_color:                   270  vlera null  
-price:                              3  vlera null  
+# Kolonat që nuk do të përdoren
+*Per shkak të mos ndikimit në qëllimin e parashikimit do të largojmë këtë kolonë:*
+third_row_seating 
+```
+dataset.drop(columns=['third_row_seating'], inplace=True)
+```
 
+*Per shkak që ka informata duplikate në dy kolona të ndryshme, do të largojmë këtë kolonë:*
+engine  
+```
+dataset.drop(columns=['engine'], inplace=True)
+```
+
+*Per shkak qe per ne informate e vlefshme është ajo se a është vetura automatike apo manuale, e mbajmë vetëm kolonën automatic_transmission, do të largojmë kolonën:*
+transmission  
+```
+dataset.drop(columns=['transmission'], inplace=True)
+```
+
+# Kualiteti i të dhënave 
+```
+print(dataset.isnull().sum(axis=0))
+```
+
+**Vlerat null** 
+*Trajtimi i këtyre vlerave do të përshkruhet më detajisht në vijim.*
+ 
 <img width="323" alt="Screenshot 2024-03-19 at 22 32 12" src="https://github.com/guximselmani/ML/assets/44524736/8b1f74cb-d2f3-494a-aafc-5db88e892a24">
 
-# Kualiteti i të dhënave  
-
+**Pastrimi i të dhënave**
 *Në përpjekjen për të siguruar cilësinë më të lartë të të dhënave, është kryer një ekzaminim i gjerë i të dhënave. Më poshtë janë gjetjet kryesore dhe metodologjitë e aplikuara në secilin aspekt të vlerësimit të cilësisë së të dhënave.*  
+
 
 duke aplikuar metoden print(dataset(dtypes)) shihen tipet e disa kolonave te cilat janë gabim në dataset
 ```
@@ -193,15 +190,77 @@ boolean_columns = ['damaged', 'first_owner', 'personal_using', 'turbo', 'alloy_w
 
  dataset[boolean_columns] = dataset[boolean_columns].astype(bool)  
  ```
+**Duke aplikuar këtë metodë 
+```
+nunique()
+```
+, është pa që atributet *interior_color* dhe *exterior_color* kanë shumë vlera unike
+```
+unique_interior_colors = dataset['interior_color'].nunique()
+unique_exterior_colors = dataset['exterior_color'].nunique()
 
-**Vlerat duplikate**  
-0  
-<img width="323" alt="Screenshot 2024-03-19 at 22 29 53" src="https://github.com/guximselmani/ML/assets/44524736/d8d41a7e-a80e-4af2-a274-40dc8534b334">
+print("Number of unique interior colors:", unique_interior_colors)
+print("Number of unique exterior colors:", unique_exterior_colors)
+```  
+![Bildschirmfoto 2024-03-24 um 17 33 20](https://github.com/guximselmani/ML/assets/44524736/a8983fd1-7626-4ce6-b3e2-e6d71dbf189f)
 
-**Korelacioni mes min_mpg dhe max_mpg** 
+
+**Duke aplikuar këtë metodë**     
+```
+value_counts()
+```
+, është pa që sa herë përseritet ngjyra e njejtë në atributet *interior_color* dhe *exterior_color*, 
+```
+interior_color_counts = dataset['interior_color'].value_counts()
+exterior_color_counts = dataset['exterior_color'].value_counts()
+```
+
+Prandaj duke parë shumë ngjyra tek cilat janë vetëm një herë në këtë dataset, kemi kriju një vlerë 'Other' për vlerat e ngjyrave që janë prezente në më pak se 100 vetura në komplet datasetin.
+
+```
+less_frequent_colors_exterior = exterior_color_counts[exterior_color_counts < 100].index
+```
+```
+less_frequent_colors_exterior = interior_color_counts[interior_color_counts < 100].index
+```
+
+```
+dataset['interior_color'] = dataset['interior_color'].replace(less_frequent_colors_interior, 'Other')
+dataset['exterior_color'] = dataset['exterior_color'].replace(less_frequent_colors_exterior, 'Other')
+```
+
+**Në kuader të trajtimit të vlerave të zbrazëta, për shkak te numrit të vogël të rreshtave, bejmë largimin e tyre:**
+ 
+```
+dataset = dataset.dropna(subset=['price'])
+dataset = dataset.dropna(subset=['exterior_color'])
+dataset = dataset.dropna(subset=['interior_color'])
+dataset = dataset.dropna(subset=['engine_size'])
+```
+
+Pastaj nëse aplikojme përseri funksionin 
+```
+print(dataset.isnull().sum(axis=0))
+```
+![Bildschirmfoto 2024-03-24 um 17 40 15](https://github.com/guximselmani/ML/assets/44524736/d0a9c422-03d5-4358-8929-d39f243176df)
+
+shohim që këto dy kolona *min_mpg* edhe *max_mpg* kanë 3118 vlera të zbrazëta.
+
+Nëse e formojmë një matricë të korrelacionit për këto dy kolona
+```
+columns_of_interest = ['min_mpg', 'max_mpg']
+selected_data = dataset[columns_of_interest]
+correlation_matrix = selected_data.corr()
+print(correlation_matrix)
+```
 ![corr mpg_min_max](https://github.com/guximselmani/ML/assets/44524736/a4f209e4-2126-457a-bd46-72ae421b7245)
 
+Duke e parë që këto dy kolona kanë një lidhje të madhe mes vete, dhe poashtu duke e ditë qe në mënyre indirekte që vlerat për këto dy kolona derivohen nga madhësia e motorit të veturës, i largojmë keto dy kolona
 
+```
+dataset.drop(['min_mpg', 'max_mpg' ], axis=1, inplace=True)
+ 
+```
 
 Faza I: Përgatitja e modelit
 
