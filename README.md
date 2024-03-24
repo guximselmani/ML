@@ -101,11 +101,13 @@ Max_mpg
 **Ratio:**  
 Price  
 
+# Tipet e të dhënave  
+```
+print(dataset.dtypes)
+```
+![data types](https://github.com/guximselmani/ML/assets/44524736/050afeae-cc08-485a-b6c3-804faeb60d82)
 
-# Kualiteti i të dhënave  
-**Info rreth datasetit**  
-<img width="728" alt="Screenshot 2024-03-19 at 22 50 13" src="https://github.com/guximselmani/ML/assets/44524736/b72be16f-7fe5-44a0-9e42-bee0c677af22">
-
+  
 
 **Vlerat null**  
 
@@ -148,14 +150,64 @@ price:                              3  vlera null
 
 <img width="323" alt="Screenshot 2024-03-19 at 22 32 12" src="https://github.com/guximselmani/ML/assets/44524736/8b1f74cb-d2f3-494a-aafc-5db88e892a24">
 
+# Kualiteti i të dhënave  
+
+*Në përpjekjen për të siguruar cilësinë më të lartë të të dhënave, është kryer një ekzaminim i gjerë i të dhënave. Më poshtë janë gjetjet kryesore dhe metodologjitë e aplikuara në secilin aspekt të vlerësimit të cilësisë së të dhënave.*  
+
+duke aplikuar metoden print(dataset(dtypes)) shihen tipet e disa kolonave te cilat janë gabim në dataset
+```
+Kolona 'price' : object  
+Kolona 'year' : float  
+Kolona 'first_owner' : float  
+Kolona 'personal_using' : float  
+Kolona 'alloy_wheels' : float
+Kolona 'adaptive_cruise_control' : float  
+Kolona 'navigation_system' : float  
+Kolona 'power_liftgate' : float  
+Kolona 'backup_camera' : float  
+Kolona 'keyless_start' : float  
+Kolona 'remote_start' : float  
+Kolona 'sunroof/moonroof'' : float  
+Kolona 'automatic_emergency_braking' : object  
+Kolona 'stability_control' : object  
+Kolona 'leather_seats' : object  
+Kolona 'memory_seat' : object  
+Kolona 'apple_car_play/android_auto'' : object  
+Kolona 'bluetooth' : float  
+Kolona 'usb_port' : float  
+Kolona 'heated_seats' : float  
+Kolona 'automatic_transmission' : float  
+```
+
+Këto janë trajtuar me aplikimin e këtyre metodave:  
+```
+dataset['price'] = pd.to_numeric(dataset['price'], errors='coerce')  
+dataset['year'] = dataset['year'].astype(int)  
+dataset['mileage'] = dataset['mileage'].astype(int)  
+boolean_columns = ['damaged', 'first_owner', 'personal_using', 'turbo', 'alloy_wheels',  
+'adaptive_cruise_control', 'navigation_system', 'power_liftgate',   
+'backup_camera', 'keyless_start', 'remote_start', 'sunroof/moonroof',   
+'automatic_emergency_braking', 'stability_control', 'leather_seats',   
+'memory_seat' , 'apple_car_play/android_auto',   
+'bluetooth', 'usb_port', 'heated_seats','automatic_transmission']  
+
+ dataset[boolean_columns] = dataset[boolean_columns].astype(bool)  
+ ```
 
 **Vlerat duplikate**  
 0  
 <img width="323" alt="Screenshot 2024-03-19 at 22 29 53" src="https://github.com/guximselmani/ML/assets/44524736/d8d41a7e-a80e-4af2-a274-40dc8534b334">
 
+**Korelacioni mes min_mpg dhe max_mpg** 
+![corr mpg_min_max](https://github.com/guximselmani/ML/assets/44524736/a4f209e4-2126-457a-bd46-72ae421b7245)
+
 
 
 Faza I: Përgatitja e modelit
+
+
+**Accuracy**
+
 
 Faza II: Analiza dhe evaluimi
 Faza III: Aplikimi i veglave të ML
