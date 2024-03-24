@@ -1,3 +1,4 @@
+Faza I: Përgatitja e modelit
 
 # Pasqyrë e pergjithshme
 Ky projekt zhvillohet si pjesë e kurrikulës së studimeve Master në Fakultetin e Inxhinierisë Elektrike dhe Kompjuterike në kuadër të lëndës 'Machine Learning'. Fokusohet në aspektet thelbësore të aplikimit të algoritmeve të ML në një domen të caktuar.
@@ -180,7 +181,9 @@ Këto janë trajtuar me aplikimin e këtyre metodave:
 ```
 dataset['price'] = pd.to_numeric(dataset['price'], errors='coerce')  
 dataset['year'] = dataset['year'].astype(int)  
-dataset['mileage'] = dataset['mileage'].astype(int)  
+dataset['mileage'] = dataset['mileage'].astype(int)
+
+**Binarizimi**
 boolean_columns = ['damaged', 'first_owner', 'personal_using', 'turbo', 'alloy_wheels',  
 'adaptive_cruise_control', 'navigation_system', 'power_liftgate',   
 'backup_camera', 'keyless_start', 'remote_start', 'sunroof/moonroof',   
@@ -190,7 +193,7 @@ boolean_columns = ['damaged', 'first_owner', 'personal_using', 'turbo', 'alloy_w
 
  dataset[boolean_columns] = dataset[boolean_columns].astype(bool)  
  ```
-**Duke aplikuar këtë metodë 
+**Duke aplikuar këtë metodë**  
 ```
 nunique()
 ```
@@ -215,22 +218,19 @@ interior_color_counts = dataset['interior_color'].value_counts()
 exterior_color_counts = dataset['exterior_color'].value_counts()
 ```
 
-Prandaj duke parë shumë ngjyra tek cilat janë vetëm një herë në këtë dataset, kemi kriju një vlerë 'Other' për vlerat e ngjyrave që janë prezente në më pak se 100 vetura në komplet datasetin.
-
+Prandaj duke parë shumë ngjyra tek cilat janë paraqit shumë rrallë në këtë dataset, kemi kriju një vlerë 'Other' për vlerat e ngjyrave që janë prezente në më pak se 100 vetura në komplet datasetin.
 ```
 less_frequent_colors_exterior = exterior_color_counts[exterior_color_counts < 100].index
 ```
 ```
 less_frequent_colors_exterior = interior_color_counts[interior_color_counts < 100].index
 ```
-
 ```
 dataset['interior_color'] = dataset['interior_color'].replace(less_frequent_colors_interior, 'Other')
 dataset['exterior_color'] = dataset['exterior_color'].replace(less_frequent_colors_exterior, 'Other')
 ```
 
 **Në kuader të trajtimit të vlerave të zbrazëta, për shkak te numrit të vogël të rreshtave, bejmë largimin e tyre:**
- 
 ```
 dataset = dataset.dropna(subset=['price'])
 dataset = dataset.dropna(subset=['exterior_color'])
@@ -259,13 +259,87 @@ Duke e parë që këto dy kolona kanë një lidhje të madhe mes vete, dhe poash
 
 ```
 dataset.drop(['min_mpg', 'max_mpg' ], axis=1, inplace=True)
- 
 ```
 
-Faza I: Përgatitja e modelit
+# Të dhënat e plota
+Pas trajtimit dhe pastrimit të të dhënave, aplikojmë këto funksione:  
+```
+print(dataset.isnull().sum(axis=0))
+num_rows, num_columns = dataset.shape
+
+print("Number of columns:", num_columns)
+print("Number of rows:", num_rows)
+```
+![Bildschirmfoto 2024-03-24 um 17 52 11](https://github.com/guximselmani/ML/assets/44524736/aba0e6ff-890a-409f-8b79-b0e1be43cebc)  
+
+# Diskretizimi  
+**Diskretizimi i kolonës 'engine_size'**  
+![image](https://github.com/guximselmani/ML/assets/44524736/e8e72fbe-6b6a-4ae4-82ac-a366894eddab)  
+
+**Diskretizimi i kolonës 'drivetrain'**  
+![Bildschirmfoto 2024-03-24 um 19 36 47](https://github.com/guximselmani/ML/assets/44524736/8d06ad64-4998-4942-9d44-aba3458fb9fd)  
+
+**Diskretizimi i kolonës 'fuel'**  
+![Bildschirmfoto 2024-03-24 um 19 37 17](https://github.com/guximselmani/ML/assets/44524736/9d96ce3f-f6fc-4cae-8bba-b7f8e9e83456)  
+
+# Transformimi
+**Normalizimi i atributeve numerike**
+Në rastet kur atributet numerike kanë shkallë të ndryshme duhet të  merren parasysh aplikimet e teknikave të shkallëzimit të veçorive si standardizimi ose normalizimi për t'i sjellë ato në një shkallë të ngjashme. Pasi kjo mund të ndihmojë në përmirësimin e performancës së algoritmeve të ML.
+
+```
+numerical_data = dataset[['year', 'mileage']]
+
+min_max_scaler = MinMaxScaler()
+scaled_data_minmax = min_max_scaler.fit_transform(numerical_data)
+scaled_data_minmax_df = pd.DataFrame(scaled_data_minmax, columns=numerical_data.columns)
+print(scaled_data_minmax_df.head())
+```
+![Bildschirmfoto 2024-03-24 um 20 18 56](https://github.com/guximselmani/ML/assets/44524736/b4aa1438-98f9-4ec0-9102-8189d324efe8)
+
+# Detektimi i outliers
+*Në këtë fazë, u fokusuam në identifikimin dhe menaxhimin e të dhënave outliers, korrigjimin e zbulimeve të pasakta dhe kryerjen e një eksplorimi të plotë të grupit të të dhënave, duke përfshirë përmbledhjen e statistikave dhe analizat me shumë variacione.*
+
+**Detektimi i outlier duke përdorur IQR (Boxplots) për atributet numerike**
+Duke pêrdorur IQR, për detektimin e outliers në atributet numerike kemi fituar rezultatin:
+```
+year: 819
+mileage: 446
+price: 1086
+```
+pas largimit të tyre:
+```
+Shape of dataset before removing outliers: (20774, 31)
+Shape of dataset after removing outliers: (18571, 31)
+```
+
+**Enkodimi i variablava kategorike**
+Variablat kategorikë si interior_color, exterior_color, brand dhe model janë të enkoduara duke përdorur metodën fit_transform() të LabelEncoder. Kjo i konverton etiketat kategorike në paraqitje numerike.
+ 
+
+ # Selektimi i vecorive dhe variabla e targetit
+
+ X krijohet duke larguar variablin e targetit (first_owner) nga grupi i të dhënave. Kjo do të përmbajë të gjitha tiparet e përdorura për predikim.
+Y i është caktuar ndryshorja e targetit (first_owner). Kjo do të përdoret për të trajnuar modelin për të parashikuar variablin e synuar bazuar në veçoritë.
+
+# Ndarja e të dhënave në grupe trajnimi dhe testimi
+*Në përgjithësi, ky segment kodi përgatit grupin e të dhënave për trajnimin e një modeli RandomForestClassifier duke koduar variabla kategorike, duke e ndarë grupin e të dhënave në grupe trajnimi dhe testimi dhe duke zgjedhur veçoritë e duhura dhe variablin e synuar.*
+```
+# Select features and target variable
+X = dataset.drop('first_owner', axis=1)  # Features
+y = dataset['first_owner']  # Target variable
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+```
+Funksioni train_test_split() përdoret për të ndarë grupin e të dhënave në grupe trajnimi dhe testimi.
+X_train, X_test: Këto variabla përmbajnë veçoritë për grupet e trajnimit dhe testimit.
+y_train, y_test: Këto variabla përmbajnë variablen e targetuar për grupet e trajnimit dhe testimit.
+test_size=0.2: Ky parametër specifikon që 20% e të dhënave do të përdoren për testim, dhe 80% e mbetur do të përdoret për trajnim.
+random_state=42: Ky parametër siguron riprodhueshmëri duke vendosur një bazë për gjeneratorin e numrave të rastësishëm.
 
 
-**Accuracy**
+
+ 
 
 
 Faza II: Analiza dhe evaluimi
