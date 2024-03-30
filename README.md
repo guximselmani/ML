@@ -1,8 +1,21 @@
 Faza I: Përgatitja e modelit
 
 # Pasqyrë e pergjithshme
-Ky projekt zhvillohet si pjesë e kurrikulës së studimeve Master në Fakultetin e Inxhinierisë Elektrike dhe Kompjuterike në kuadër të lëndës 'Machine Learning'. Fokusohet në aspektet thelbësore të aplikimit të algoritmeve të ML në një domen të caktuar.
+* Ky projekt zhvillohet si pjesë e kurrikulës në Universitetin e Prishtinës, në kuadër të studimeve të nivelit Master të Fakultetit të Inxhinierisë Elektrike dhe Kompjuterike, si aktivitet i lëndës 'Machine Learning'.
+Fokusohet në aspektet thelbësore të aplikimit të algoritmeve të ML në një domen të caktuar.
+  
+* Profesor:  
+  Prof. Dr. Lule AHMEDI
 
+* Asistent:  
+  M. Sc. Mërgim HOTI
+  
+* Autor:  
+  Guxim Selmani
+
+* Viti akademik:
+  2023/2024
+  
 # Qëllimi
 Objektivi kryesor i këtij projekti është të demonstrojë në përgjithësi përgatitjen, përpunimin dhe vizualizimin e të dhënave ashtu që të mund të zbatohen teknika dhe metodologji të ndryshme që lidhen me përgatitjen dhe krijimin e modelit parashikues dhe zbatimin e algoritmeve te ML.
 
@@ -374,10 +387,10 @@ print("Rows for testing:", rows_testing)
 *Random Forest* është një algoritëm që mund përdorët për detyra klasifikimi si në rastin tonë nëse është pronari i parë apo jo,
 avantazheve që ofron ky algoritem:
 
-*Saktësia e lartë:* Pylli i rastësishëm tenton të sigurojë saktësi të lartë në krahasim me shumë algoritme të tjera. Funksionon mirë si me veçoritë numerike ashtu edhe me ato kategorike dhe mund të trajtojë një numër të madh të variablave hyrëse pa u përshtatur shumë.
+*Saktësia e lartë:* Random Forest tenton të sigurojë saktësi të lartë në krahasim me shumë algoritme të tjera. Funksionon mirë si me veçoritë numerike ashtu edhe me ato kategorike dhe mund të trajtojë një numër të madh të variablave hyrëse pa u përshtatur shumë.
 
 
-*E qëndrueshme ndaj Overfitting:* Random Forest është më pak i prirur ndaj mbi pe4rshtatjes në krahasim me decision trees. Duke trajnuar shumë pemë në nëngrupe të ndryshme të të dhënave dhe duke mesatarizuar parashikimet e tyre, zvogëlon rrezikun e përshtatjes së tepërt ndaj zhurmës në të dhënat e trajnimit.
+*E qëndrueshme ndaj Overfitting:* Random Forest është më pak i prirur ndaj mbi përshtatjes në krahasim me decision trees. Duke trajnuar shumë pemë në nëngrupe të ndryshme të të dhënave dhe duke mesatarizuar parashikimet e tyre, zvogëlon rrezikun e përshtatjes së tepërt ndaj zhurmës në të dhënat e trajnimit.
 
 *Trajton marrëdhëniet jo-lineare:* Random Forest mund të kapë marrëdhënie komplekse jolineare midis veçorive dhe targetit së synuar. Ai e bën këtë duke marrë parasysh kufijtë e shumëfishtë të vendimeve të krijuara nga pemë të ndryshme, duke e lejuar atë të modelojë modele të ndërlikuara në të dhëna.
 
