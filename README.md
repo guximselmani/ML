@@ -383,6 +383,167 @@ print("Rows for testing:", rows_testing)
 ```
 ![Bildschirmfoto 2024-03-24 um 22 12 13](https://github.com/guximselmani/ML/assets/44524736/140f78c9-6bd3-4422-b142-5cd133e6183c)
 
+
+# Faza II: Analiza dhe evaluimi  
+Gjatë trajnimit, modeli mëson paterne në të dhënat që lidhen me variablen e targetuar.
+Prandaj është thelbësore të analizohet dhe krahasohet performanca e modelit kundrejt algoritmeve të tjera për të përcaktuar nëse nevojiten optimizime të mëtejshme shtesë. Do të analizohen ndarje të ndryshme të të dhënave testuese dhe trajnuese për të vlerësuar performancën duke përdorur metrikat  Accuracy, F1-score, Recall dhe Precision.
+
+Ne do të analizojmë rezultatet e trajnimit të 4 algoritmeve të ndryshme të cilat janë:  
+
+* Random Forest Classifier
+* Logistic Regression
+* SVM
+* Naive Bayes
+
+Me aplikimin e algoritmit <strong>Random Forest Classifier</strong>:  
+*Rasti I*  
+Raporti i të dhënave testuese dhe trainuese është 0.1 me 0.9
+```
+Accuracy: 0.7670837343599615
+F1-score (Random Forest): 0.7744641192917054
+Recall (Random Forest): 0.7832233741753063
+Precision (Random Forest): 0.7658986175115208
+```
+*Rasti II*  
+Raporti i të dhënave testuese dhe trainuese është 0.2 me 0.8
+```
+Accuracy: 0.770878459687124
+F1-score (Random Forest): 0.7801385681293302
+Recall (Random Forest): 0.7874125874125875
+Precision (Random Forest): 0.7729977116704806
+```
+*Rasti III*  
+Raporti i të dhënave testuese dhe trainuese është 0.3 me 0.7
+```
+Accuracy: 0.7623937108936307
+F1-score (Random Forest): 0.7740655987795575
+Recall (Random Forest): 0.7760783114102172
+Precision (Random Forest): 0.7720632988435788
+```
+*Rasti IV*  
+Raporti i të dhënave testuese dhe trainuese është 0.4 me 0.6
+```
+Accuracy: 0.7567990373044524
+F1-score (Random Forest): 0.7679944897256342
+Recall (Random Forest): 0.7617854702801184
+Precision (Random Forest): 0.7743055555555556
+```
+***Bazuar në rezultatet e gjeneruara nga këto metrika, duket se Rasti II (raporti i ndarjes së të dhënave testuese dhe trajnuese prej 0,2:0,8) gjeneron rezultatet më të mira në krahasim me rastet e tjera për Random Forest Classifier.***
+
+
+Me aplikimin e algoritmit <strong>Logistic Regression</strong>:  
+*Rasti I*  
+Raporti i të dhënave testuese dhe trainuese është 0.1 me 0.9
+```
+Accuracy (Logistic Regression): 0.670837343599615
+F1-score (Logistic Regression): 0.6992084432717678
+Recall (Logistic Regression): 0.7492931196983977
+Precision (Logistic Regression): 0.6553998351195384
+```
+*Rasti II*  
+Raporti i të dhënave testuese dhe trainuese është 0.2 me 0.8
+```
+Accuracy (Logistic Regression): 0.6803850782190133
+F1-score (Logistic Regression): 0.7129269347168181
+Recall (Logistic Regression): 0.7687645687645688
+Precision (Logistic Regression): 0.6646513502619912
+```
+*Rasti III*  
+Raporti i të dhënave testuese dhe trainuese është 0.3 me 0.7
+```
+Accuracy (Logistic Regression): 0.6821755174073479
+F1-score (Logistic Regression): 0.7188076650106459
+Recall (Logistic Regression): 0.7745487916794127
+Precision (Logistic Regression): 0.6705508474576272
+```
+*Rasti IV*  
+Raporti i të dhënave testuese dhe trainuese është 0.4 me 0.6
+```
+Accuracy (Logistic Regression): 0.678459687123947
+F1-score (Logistic Regression): 0.7148954332052924
+Recall (Logistic Regression): 0.7629241630608062
+Precision (Logistic Regression): 0.672555711704477
+```
+***Bazuar në rezultatet e gjeneruara nga këto metrika, duket se Rasti III (raporti i ndarjes së të dhënave testuese dhe trajnuese prej 0.3:0.7) performon pak më mirë në krahasim me rastet e tjera për Regresionin Logjistik.***
+
+
+Me aplikimin e algoritmit <strong>SVM</strong>  
+*Rasti I*  
+Raporti i të dhënave testuese dhe trainuese është 0.1 me 0.9
+```
+Accuracy (SVM): 0.6886429258902791
+F1-score (SVM): 0.7084272194682288
+Recall (SVM): 0.7408105560791706
+Precision (SVM): 0.6787564766839378
+```
+*Rasti II*  
+Raporti i të dhënave testuese dhe trainuese është 0.2 me 0.8
+```
+Accuracy (SVM): 0.69338146811071
+F1-score (SVM): 0.7172658677319129
+Recall (SVM): 0.7533799533799533
+Precision (SVM): 0.6844557390936044
+```
+*Rasti III*  
+Raporti i të dhënave testuese dhe trainuese është 0.3 me 0.7
+```
+Accuracy (SVM): 0.6892347184341409
+F1-score (SVM): 0.7171023806046444
+Recall (SVM): 0.7509941878250229
+Precision (SVM): 0.6861375069871437
+```
+*Rasti IV*  
+Raporti i të dhënave testuese dhe trainuese është 0.4 me 0.6
+```
+Accuracy (SVM): 0.6878459687123947
+F1-score (SVM): 0.7156325367244026
+Recall (SVM): 0.7433386472329765
+Precision (SVM): 0.6899175649968294
+```
+***Bazuar në rezultatet e gjeneruara nga këto metrika, duket se Rasti II (raporti i ndarjes së të dhënave testuese dhe trajnuese prej 0.2:0.8) performon pak më mirë në krahasim me rastet e tjera për SVM.***
+
+
+Me aplikimin e algoritmit <strong>Naive Bayes</strong>  
+*Rasti I*  
+Raporti i të dhënave testuese dhe trainuese është 0.1 me 0.9
+```
+Accuracy (Naive Bayes): 0.7040423484119346
+F1-score (Naive Bayes): 0.7492865878516103
+Recall (Naive Bayes): 0.8661639962299718
+Precision (Naive Bayes): 0.6602011494252874
+```
+*Rasti II*  
+Raporti i të dhënave testuese dhe trainuese është 0.2 me 0.8  
+```
+Accuracy (Naive Bayes): 0.7051744885679904
+F1-score (Naive Bayes): 0.7542627883650952
+Recall (Naive Bayes): 0.8764568764568764
+Precision (Naive Bayes): 0.6619718309859155
+```
+*Rasti III*  
+Raporti i të dhënave testuese dhe trainuese është 0.3 me 0.7
+```
+Accuracy (Naive Bayes): 0.7108936306754372
+F1-score (Naive Bayes): 0.7569463177771784
+Recall (Naive Bayes): 0.8583664729275008
+Precision (Naive Bayes): 0.6769601930036189
+```
+*Rasti IV*  
+Raporti i të dhënave testuese dhe trainuese është 0.4 me 0.6
+```
+Accuracy (Naive Bayes): 0.7086642599277978
+F1-score (Naive Bayes): 0.755725961053375
+Recall (Naive Bayes): 0.85288089273514
+Precision (Naive Bayes): 0.6784420289855072
+```
+***Bazuar në rezultatet e gjeneruara nga këto metrika, duket se Rasti III (raporti i ndarjes së të dhënave testuese dhe trajnuese prej 0.3:0.7) performon pak më mirë në krahasim me rastet e tjera për Naive Bayes.***
+
+# Vizualizimi i performancën së secilit algoritëm në metrikat përkatëse.
+<img width="715" alt="Bildschirmfoto 2024-04-27 um 00 12 28" src="https://github.com/guximselmani/ML/assets/44524736/92c6c70d-3c50-4d46-a4e1-bb254a94c5cc">
+
+<img width="715" alt="Bildschirmfoto 2024-04-27 um 00 12 44" src="https://github.com/guximselmani/ML/assets/44524736/33916c5c-9bfc-4658-a262-d5cced4cb38a">
+
+Faza III: Aplikimi i veglave të ML
 # Pse algoritmi Random Forest Classifier?
 *Random Forest* është një algoritëm që mund përdorët për detyra klasifikimi si në rastin tonë nëse është pronari i parë apo jo,
 avantazheve që ofron ky algoritem:
@@ -399,6 +560,6 @@ avantazheve që ofron ky algoritem:
 *Rëndësia e veçorive:* Random Forest ofron një masë të rëndësisë së veçorive, e cila tregon kontributin e çdo veçori në performancën parashikuese të modelit. Ky informacion mund të jetë i dobishëm për zgjedhjen e veçorive dhe për të kuptuar marrëdhëniet themelore në të dhëna.
 
 
-Faza II: Analiza dhe evaluimi
-Faza III: Aplikimi i veglave të ML
+ 
+ 
 
