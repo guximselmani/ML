@@ -541,15 +541,15 @@ Precision (Naive Bayes): 0.6784420289855072
 Në këtë analizë, janë përdorur katër algoritme të ndryshme për të modeluar dhe parashikuar të dhënat. Për secilin algoritem, janë raportuar rezultatet e performancës për katër raste të ndryshme, ku ndarja e të dhënave testuese dhe trajnuese është ndryshuar për secilin rast.
 
 *Random Forest Classifier:*    
-Rezultatet më të mira për këtë algoritem janë vërejtur në rastin e dytë, ku raporti i ndarjes së të dhënave është 0.2 për trajnuesin dhe 0.8 për testimin.  
+Rezultatet më të mira për këtë algoritem janë vërejtur në rastin e dytë, ku raporti i ndarjes së të dhënave është 0.2 me 0.8.  
 *Logistic Regression:*   
-Performanca më e mirë është evidentuar në rastin e tretë, me një raport ndarjeje të të dhënave 0.3:0.7.  
+Performanca më e mirë është evidentuar në rastin e tretë,  ku raporti i ndarjes së të dhënave është 0.3:0.7.  
 *SVM:*    
-Rezultatet më të mira për SVM janë vërejtur gjithashtu në rastin e dytë, me raportin e ndarjes 0.2:0.8.  
+Rezultatet më të mira për SVM janë vërejtur gjithashtu në rastin e dytë,  ku raporti i ndarjes së të dhënave është 0.2:0.8.  
 *Naive Bayes:*       
-Performanca më e mirë është vlerësuar në rastin e tretë, me një raport ndarjeje të të dhënave 0.3:0.7.  
+Performanca më e mirë është vlerësuar në rastin e tretë,  ku raporti i ndarjes së të dhënave është 0.3:0.7.  
 
-Këto rezultate vërtetojnë se ndryshimi i ndarjes së të dhënave testuese dhe trajnuese mund të ketë ndikim në performancën e algoritmeve të mësipërm.  
+Këto rezultate vërtetojnë se ndryshimi i ndarjes së të dhënave testuese dhe trajnuese mund të ketë ndikim në performancën e algoritmeve të mësipërm.  Në rastin tonë saktësi më të madhe ka gjeneruar algoritmi Random Forest Classifier
 Një reprezentim më të mirë të këtyre rezultateve të gjeneruara, mund të i paraqesim përmes visualizimit si më poshtë:  
 # Vizualizimi i performancën së secilit algoritëm në metrikat përkatëse.
 <img width="715" alt="Bildschirmfoto 2024-04-27 um 00 12 28" src="https://github.com/guximselmani/ML/assets/44524736/92c6c70d-3c50-4d46-a4e1-bb254a94c5cc">
