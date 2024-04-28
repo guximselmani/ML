@@ -395,6 +395,14 @@ Ne do të analizojmë rezultatet e trajnimit të 4 algoritmeve të ndryshme të 
 * SVM
 * Naive Bayes
 
+Për t'i aplikuar këto algoritme së pari duhet t'i importojmë këto librari:
+```
+from sklearn.naive_bayes import GaussianNB
+from sklearn.svm import SVC
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
+```
+
 Me aplikimin e algoritmit <strong>Random Forest Classifier</strong>:  
 *Rasti I*  
 Raporti i të dhënave testuese dhe trainuese është 0.1 me 0.9
