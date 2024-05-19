@@ -572,6 +572,17 @@ Një reprezentim më të mirë të këtyre rezultateve të gjeneruara, mund të 
 <img width="415" alt="Bildschirmfoto 2024-04-27 um 00 12 44" src="https://github.com/guximselmani/ML/assets/44524736/33916c5c-9bfc-4658-a262-d5cced4cb38a">
 
 # Faza III: Ritrajnimi dhe Aplikimi i veglave të ML
+Për të përshkruar shkallën në të cilën dy variabla janë të lidhura e përdorim Correlation. Vlerat e saj janë në rangun [-1, 1].
+
+1 tregon një raport pozitiv linear: kur njëra ndryshore rritet, tjetra gjithashtu rritet proporcionalisht.
+-1 tregon një raport linear negativ: kur njëra ndryshore rritet, tjetra zvogëlohet proporcionalisht.
+0 tregon asnjë lidhje lineare midis variablave.
+
+Analiza e korrelacionit mund të ndihmojë në përzgjedhjen e veçorive duke identifikuar veçori të tepërta ose shumë të ndërlidhura. (Këtë do ta përdorim më poshtë, për t'i larguar disa atribute me më pak peshë).
+```
+correlation_matrix = dataset.corr()
+```
+<img width="687" alt="Screenshot 2024-05-19 at 20 55 09" src="https://github.com/guximselmani/ML/assets/44524736/b388b0ad-f20a-4fab-bd65-babb0d177bf6">
 
 Do të aplikojmë SMOTE dhe MinMaxScaler, për të mësuar nëse kjo do të ndikoj në përmirësim te rezultateve paraprake të cilat janë gjeneruar gjatë fazës II.
 ```
