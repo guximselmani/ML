@@ -564,7 +564,45 @@ Një reprezentim më të mirë të këtyre rezultateve të gjeneruara, mund të 
 
 <img width="715" alt="Bildschirmfoto 2024-04-27 um 00 12 44" src="https://github.com/guximselmani/ML/assets/44524736/33916c5c-9bfc-4658-a262-d5cced4cb38a">
 
-Faza III: Aplikimi i veglave të ML
+Faza III: Ritrajnimi dhe Aplikimi i veglave të ML
+
+Do të aplikojmë SMOTE dhe MinMaxScaler, për të mësuar nëse kjo do të ndikoj në përmirësim te rezultateve paraprake të cilat janë gjeneruar gjatë fazës II.
+```
+from imblearn.over_sampling import SMOTE
+```
+MinMaxScaler nuk e zvogëlon efektin e pikave të jashtme, por i zvogëlon ato në mënyrë lineare në një interval fiks, ku pika më e madhe e të dhënave korrespondon me vlerën maksimale dhe ajo më e vogla korrespondon me
+vlerë minimale.
+```
+scaler = MinMaxScaler()
+X_scaled = scaler.fit_transform(X)
+```
+
+Pas aplikimit i kemi gjeneru keto rezultate:
+(Raporti i të dhënave testuese dhe trainuese për secilin algoritëm është marrë ashtu siç është dëshmuar në fazen II qe  përformon më mirë)
+*Random Forest Classifier:* test size = 0.2:
+  Accuracy: 0.7591849831541794
+  F1-score: 0.7687567401016793
+  Recall: 0.7632303456714592
+  Precision: 0.7743637492240845
+
+*Logistic Regressionr:* test size = 0.3:
+  Accuracy: 0.7461896358094016
+  F1-score: 0.7575107296137339
+  Recall: 0.7558886509635975
+  Precision: 0.7591397849462366
+
+*SVM:* test size = 0.2:
+  Accuracy: 0.7384886892347184
+  F1-score: 0.7565710872162486
+  Recall: 0.7748546956255735
+  Precision: 0.7391304347826086
+
+*Naive Bayes:* test size = 0.3:
+  Accuracy: 0.7049574843574523
+  F1-score: 0.7345937364699091
+  Recall: 0.7785255429795044
+  Precision: 0.6953551912568307
+
 # Pse algoritmi Random Forest Classifier?
 *Random Forest* është një algoritëm që mund përdorët për detyra klasifikimi si në rastin tonë nëse është pronari i parë apo jo,
 avantazheve që ofron ky algoritem:
