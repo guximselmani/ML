@@ -1,4 +1,4 @@
-Faza I: Përgatitja e modelit
+# Faza I: Përgatitja e modelit
 
 # Pasqyrë e pergjithshme
 * Ky projekt zhvillohet si pjesë e kurrikulës në Universitetin e Prishtinës, në kuadër të studimeve të nivelit Master të Fakultetit të Inxhinierisë Elektrike dhe Kompjuterike, si aktivitet i lëndës 'Machine Learning'.
@@ -560,18 +560,18 @@ Performanca më e mirë është vlerësuar në rastin e tretë,  ku raporti i nd
 Këto rezultate vërtetojnë se ndryshimi i ndarjes së të dhënave testuese dhe trajnuese mund të ketë ndikim në performancën e algoritmeve të mësipërm.  Në rastin tonë saktësi më të madhe ka gjeneruar algoritmi Random Forest Classifier
 Një reprezentim më të mirë të këtyre rezultateve të gjeneruara, mund të i paraqesim përmes visualizimit si më poshtë:  
 # Vizualizimi i confusion matricës për seciling rast te algoritmeve
-<img width="664" alt="Screenshot 2024-05-19 at 10 53 51" src="https://github.com/guximselmani/ML/assets/44524736/18c7c248-8f50-42fa-b9d0-b4ff7fc9be4b">
-<img width="664" alt="Screenshot 2024-05-19 at 10 55 07" src="https://github.com/guximselmani/ML/assets/44524736/09cdb410-a7f3-4d9c-94cd-23851a6c95a1">
-<img width="664" alt="Screenshot 2024-05-19 at 10 55 19" src="https://github.com/guximselmani/ML/assets/44524736/e5af2892-a0ab-44e1-b7ba-49c54b5481c0">
-<img width="664" alt="Screenshot 2024-05-19 at 10 55 31" src="https://github.com/guximselmani/ML/assets/44524736/005b3d3b-2eb0-481e-97e1-fdabdcd81e58">
+<img width="400" alt="Screenshot 2024-05-19 at 10 53 51" src="https://github.com/guximselmani/ML/assets/44524736/18c7c248-8f50-42fa-b9d0-b4ff7fc9be4b">
+<img width="400" alt="Screenshot 2024-05-19 at 10 55 07" src="https://github.com/guximselmani/ML/assets/44524736/09cdb410-a7f3-4d9c-94cd-23851a6c95a1">
+<img width="400" alt="Screenshot 2024-05-19 at 10 55 19" src="https://github.com/guximselmani/ML/assets/44524736/e5af2892-a0ab-44e1-b7ba-49c54b5481c0">
+<img width="400" alt="Screenshot 2024-05-19 at 10 55 31" src="https://github.com/guximselmani/ML/assets/44524736/005b3d3b-2eb0-481e-97e1-fdabdcd81e58">
 
 
 # Vizualizimi i performancën së secilit algoritëm në metrikat përkatëse.
-<img width="715" alt="Bildschirmfoto 2024-04-27 um 00 12 28" src="https://github.com/guximselmani/ML/assets/44524736/92c6c70d-3c50-4d46-a4e1-bb254a94c5cc">
+<img width="415" alt="Bildschirmfoto 2024-04-27 um 00 12 28" src="https://github.com/guximselmani/ML/assets/44524736/92c6c70d-3c50-4d46-a4e1-bb254a94c5cc">
 
-<img width="715" alt="Bildschirmfoto 2024-04-27 um 00 12 44" src="https://github.com/guximselmani/ML/assets/44524736/33916c5c-9bfc-4658-a262-d5cced4cb38a">
+<img width="415" alt="Bildschirmfoto 2024-04-27 um 00 12 44" src="https://github.com/guximselmani/ML/assets/44524736/33916c5c-9bfc-4658-a262-d5cced4cb38a">
 
-Faza III: Ritrajnimi dhe Aplikimi i veglave të ML
+# Faza III: Ritrajnimi dhe Aplikimi i veglave të ML
 
 Do të aplikojmë SMOTE dhe MinMaxScaler, për të mësuar nëse kjo do të ndikoj në përmirësim te rezultateve paraprake të cilat janë gjeneruar gjatë fazës II.
 ```
@@ -688,8 +688,8 @@ Duke u bazuar në këto krahasime më lart mund të themi se:
 *Naive Bayes është i njohur për thjeshtësinë dhe qëndrueshmërinë e tij. Supozon se tiparet janë të pavarura me kusht duke pasur parasysh etiketën e klasës. Ky supozim lejon algoritmin të bëjë parashikime në mënyrë efikase dhe shpesh performon mirë në praktikë. Pavarësisht nëse grupi i të dhënave është i pabalancuar apo i balancuar, Naive Bayes priret të mbështetet më shumë në shpërndarjet e probabilitetit të veçorive individuale sesa në shpërndarjen e përgjithshme të klasës.  
 
 # Lakorja ROC para dhe pas largimit të kolonave dhe aplikimit të smote
-<img width="579" alt="Screenshot 2024-05-19 at 11 24 44" src="https://github.com/guximselmani/ML/assets/44524736/a68c8d25-1628-44ae-b70d-da2e98a1a581">
-<img width="475" alt="Screenshot 2024-05-19 at 11 26 45" src="https://github.com/guximselmani/ML/assets/44524736/d34003da-8892-4f4b-aa9f-fe7034cb4648">
+<img width="435" alt="Screenshot 2024-05-19 at 11 24 44" src="https://github.com/guximselmani/ML/assets/44524736/a68c8d25-1628-44ae-b70d-da2e98a1a581">
+<img width="435" alt="Screenshot 2024-05-19 at 11 26 45" src="https://github.com/guximselmani/ML/assets/44524736/d34003da-8892-4f4b-aa9f-fe7034cb4648">
 
 # Algoritmi Random Forest Classifier
 *Random Forest* është një algoritëm që mund përdorët për detyra klasifikimi si në rastin tonë nëse është pronari i parë apo jo,
