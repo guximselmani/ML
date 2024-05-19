@@ -135,7 +135,7 @@ Duke përdorur këtë funksion, kemi ardh në përfundim se nuk kemi vlera dupli
 dataset.duplicated().sum()
 ```
 
-<img width="323" alt="Screenshot 2024-03-19 at 22 29 53" src="https://github.com/guximselmani/ML/assets/44524736/d8d41a7e-a80e-4af2-a274-40dc8534b334">  
+<img width="300" alt="Screenshot 2024-03-19 at 22 29 53" src="https://github.com/guximselmani/ML/assets/44524736/d8d41a7e-a80e-4af2-a274-40dc8534b334">  
 
 # Kolonat që nuk do të përdoren
 *Per shkak të mos ndikimit në qëllimin e parashikimit do të largojmë këtë kolonë:*
@@ -164,7 +164,7 @@ print(dataset.isnull().sum(axis=0))
 **Vlerat null** 
 *Trajtimi i këtyre vlerave do të përshkruhet më detajisht në vijim.*
  
-<img width="323" alt="Screenshot 2024-03-19 at 22 32 12" src="https://github.com/guximselmani/ML/assets/44524736/8b1f74cb-d2f3-494a-aafc-5db88e892a24">
+<img width="300" alt="Screenshot 2024-03-19 at 22 32 12" src="https://github.com/guximselmani/ML/assets/44524736/8b1f74cb-d2f3-494a-aafc-5db88e892a24">
 
 **Pastrimi i të dhënave**
 *Në përpjekjen për të siguruar cilësinë më të lartë të të dhënave, është kryer një ekzaminim i gjerë i të dhënave. Më poshtë janë gjetjet kryesore dhe metodologjitë e aplikuara në secilin aspekt të vlerësimit të cilësisë së të dhënave.*  
