@@ -559,6 +559,13 @@ Performanca më e mirë është vlerësuar në rastin e tretë,  ku raporti i nd
 
 Këto rezultate vërtetojnë se ndryshimi i ndarjes së të dhënave testuese dhe trajnuese mund të ketë ndikim në performancën e algoritmeve të mësipërm.  Në rastin tonë saktësi më të madhe ka gjeneruar algoritmi Random Forest Classifier
 Një reprezentim më të mirë të këtyre rezultateve të gjeneruara, mund të i paraqesim përmes visualizimit si më poshtë:  
+# Vizualizimi i confusion matricës për seciling rast te algoritmeve
+<img width="664" alt="Screenshot 2024-05-19 at 10 53 51" src="https://github.com/guximselmani/ML/assets/44524736/18c7c248-8f50-42fa-b9d0-b4ff7fc9be4b">
+<img width="664" alt="Screenshot 2024-05-19 at 10 55 07" src="https://github.com/guximselmani/ML/assets/44524736/09cdb410-a7f3-4d9c-94cd-23851a6c95a1">
+<img width="664" alt="Screenshot 2024-05-19 at 10 55 19" src="https://github.com/guximselmani/ML/assets/44524736/e5af2892-a0ab-44e1-b7ba-49c54b5481c0">
+<img width="664" alt="Screenshot 2024-05-19 at 10 55 31" src="https://github.com/guximselmani/ML/assets/44524736/005b3d3b-2eb0-481e-97e1-fdabdcd81e58">
+
+
 # Vizualizimi i performancën së secilit algoritëm në metrikat përkatëse.
 <img width="715" alt="Bildschirmfoto 2024-04-27 um 00 12 28" src="https://github.com/guximselmani/ML/assets/44524736/92c6c70d-3c50-4d46-a4e1-bb254a94c5cc">
 
@@ -577,38 +584,118 @@ scaler = MinMaxScaler()
 X_scaled = scaler.fit_transform(X)
 ```
 
-Pas aplikimit i kemi gjeneru keto rezultate:
-(Raporti i të dhënave testuese dhe trainuese për secilin algoritëm është marrë ashtu siç është dëshmuar në fazen II qe  përformon më mirë)
-*Random Forest Classifier:* test size = 0.2:
-  Accuracy: 0.7591849831541794
-  F1-score: 0.7687567401016793
-  Recall: 0.7632303456714592
-  Precision: 0.7743637492240845
+Pas aplikimit i kemi gjeneru keto rezultate:  
+(Raporti i të dhënave testuese dhe trainuese për secilin algoritëm është marrë ashtu siç është dëshmuar në fazen II qe  përformon më mirë)  
+*Random Forest Classifier:* test size = 0.2:  
+  Accuracy: 0.7591849831541794  
+  F1-score: 0.7687567401016793  
+  Recall: 0.7632303456714592  
+  Precision: 0.7743637492240845  
 
-*Logistic Regressionr:* test size = 0.3:
-  Accuracy: 0.7461896358094016
-  F1-score: 0.7575107296137339
-  Recall: 0.7558886509635975
-  Precision: 0.7591397849462366
+*Logistic Regressionr:* test size = 0.3:  
+  Accuracy: 0.7461896358094016  
+  F1-score: 0.7575107296137339  
+  Recall: 0.7558886509635975  
+  Precision: 0.7591397849462366  
 
-*SVM:* test size = 0.2:
-  Accuracy: 0.7384886892347184
-  F1-score: 0.7565710872162486
-  Recall: 0.7748546956255735
-  Precision: 0.7391304347826086
+*SVM:* test size = 0.2:  
+  Accuracy: 0.7384886892347184  
+  F1-score: 0.7565710872162486  
+  Recall: 0.7748546956255735  
+  Precision: 0.7391304347826086  
 
-*Naive Bayes:* test size = 0.3:
-  Accuracy: 0.7049574843574523
-  F1-score: 0.7345937364699091
-  Recall: 0.7785255429795044
-  Precision: 0.6953551912568307
+*Naive Bayes:* test size = 0.3:  
+  Accuracy: 0.7049574843574523  
+  F1-score: 0.7345937364699091  
+  Recall: 0.7785255429795044  
+  Precision: 0.6953551912568307  
 
-# Pse algoritmi Random Forest Classifier?
+Nese largojmë disa kolona të tjera do të shohim një përformancë më të mirë të algoritmeve
+```
+dataset.drop(columns=['engine_size_category', 'usb_port','stability_control','bluetooth'  ,'turbo','fuel_category'], inplace=True)
+
+```
+
+*Random Forest Classifier:* test size = 0.2:  
+  Accuracy: 0.7627145836675758  
+  F1-score: 0.7736801836266258  
+  Recall: 0.773325175894769  
+  Precision: 0.7740355174525413  
+
+*Logistic Regressionr:* test size = 0.3:  
+  Accuracy: 0.7431413444569228  
+  F1-score: 0.7570192745484899  
+  Recall: 0.7629244417252983  
+  Precision: 0.7512048192771085  
+
+*SVM:* test size = 0.2:  
+  Accuracy: 0.734959088721322  
+  F1-score: 0.754239809580482  
+  Recall: 0.7754665035178954  
+  Precision: 0.7341442224152911  
+
+*Naive Bayes:* test size = 0.3:   
+  Accuracy: 0.713941922027916  
+  F1-score: 0.7395939827661749  
+  Recall: 0.7745487916794127  
+  Precision: 0.7076579094466182  
+  
+ 
+
+ <img width="434" alt="Screenshot 2024-05-19 at 11 12 51" src="https://github.com/guximselmani/ML/assets/44524736/c445a1df-ba87-4c5d-bd11-19a51a684d60">
+<img width="434" alt="Screenshot 2024-05-19 at 11 13 41" src="https://github.com/guximselmani/ML/assets/44524736/27dbc25b-0041-4bb1-b2ae-a4e79f372183">
+<img width="434" alt="Screenshot 2024-05-19 at 11 14 04" src="https://github.com/guximselmani/ML/assets/44524736/60a0c484-7516-48c6-8d0b-49c332efaff3">
+<img width="434" alt="Screenshot 2024-05-19 at 11 14 15" src="https://github.com/guximselmani/ML/assets/44524736/be39d9f0-a71f-4b26-8dc2-8767d21b6cbc">
+
+<img width="899" alt="Screenshot 2024-05-19 at 09 14 54" src="https://github.com/guximselmani/ML/assets/44524736/c9c45f7f-fd38-4aa3-a626-a164a0fb45a6">
+
+*Paraqitja e dallimeve statistikore para dhe pas aplikimit te smote për secilin rast të aplikimit te algoritmeve*
+Random Forest Classifier:  
+Metric	Before SMOTE	After SMOTE	Change  
+Accuracy	0.7709	0.7627	-0.84%  
+F1-score	0.7801	0.7737	-0.14%  
+Recall	0.7874	0.7733	-1.73%  
+Precision	0.7730	0.7740	+0.14%  
+
+Logistic Regression:  
+Metric	Before SMOTE	After SMOTE	Change  
+Accuracy	0.6822	0.7431	+8.66%  
+F1-score	0.7188	0.7570	+4.74%  
+Recall	0.7745	0.7629	-1.30%  
+Precision	0.6706	0.7512	+11.94%  
+
+SVM:  
+Metric	Before SMOTE	After SMOTE	Change  
+Accuracy	0.6934	0.7350	+6.16%  
+F1-score	0.7173	0.7542	+4.72%  
+Recall	0.7534	0.7755	+2.88%  
+Precision	0.6845	0.7341	+7.20%  
+
+Naive Bayes:  
+Metric	Before SMOTE	After SMOTE	Change  
+Accuracy	0.7109	0.7139	+0.34%  
+F1-score	0.7569	0.7396	-2.85%  
+Recall	0.8584	0.7745	-9.93%  
+Precision	0.6770	0.7077	+4.34%  
+
+Duke u bazuar në këto krahasime më lart mund të themi se:  
+*Random Forest është i qëndrueshëm ndaj mosbalancimeve të klasave deri në një farë mase. Nëse grupi i të dhënave kishte imbalancë të moderuar të klasave dhe kufijtë e vendimit midis klasave ishin të mirëpërcaktuara, Random Forest mund të performonte mirë pa pasur nevojë për  SMOTE.  
+
+*Regresioni logjistik është i ndjeshëm ndaj mosbalancimeve të klasës, duke çuar në parashikime të njëanshme ndaj klasës së shumicës. Duke përdorur SMOTE, çështja e mosbalancimit zbutet, duke lejuar modelin e regresionit logjistik të mësojë më mirë kufirin e vendimit midis klasave.  
+
+*SVM është e ndjeshme ndaj mosbalancimeve të klasës dhe kur klasat janë të çekuilibruara, ajo tenton të favorizojë klasën e shumicës. Duke mbikampionuar klasën e pakicës duke përdorur SMOTE, shpërndarja e klasës bëhet më e ekuilibruar, duke lejuar SVM të mësojë një kufi vendimi që i ndan më mirë të dyja klasat.  
+
+*Naive Bayes është i njohur për thjeshtësinë dhe qëndrueshmërinë e tij. Supozon se tiparet janë të pavarura me kusht duke pasur parasysh etiketën e klasës. Ky supozim lejon algoritmin të bëjë parashikime në mënyrë efikase dhe shpesh performon mirë në praktikë. Pavarësisht nëse grupi i të dhënave është i pabalancuar apo i balancuar, Naive Bayes priret të mbështetet më shumë në shpërndarjet e probabilitetit të veçorive individuale sesa në shpërndarjen e përgjithshme të klasës.  
+
+# Lakorja ROC para dhe pas largimit të kolonave dhe aplikimit të smote
+<img width="579" alt="Screenshot 2024-05-19 at 11 24 44" src="https://github.com/guximselmani/ML/assets/44524736/a68c8d25-1628-44ae-b70d-da2e98a1a581">
+<img width="475" alt="Screenshot 2024-05-19 at 11 26 45" src="https://github.com/guximselmani/ML/assets/44524736/d34003da-8892-4f4b-aa9f-fe7034cb4648">
+
+# Algoritmi Random Forest Classifier
 *Random Forest* është një algoritëm që mund përdorët për detyra klasifikimi si në rastin tonë nëse është pronari i parë apo jo,
 avantazheve që ofron ky algoritem:
 
 *Saktësia e lartë:* Random Forest tenton të sigurojë saktësi të lartë në krahasim me shumë algoritme të tjera. Funksionon mirë si me veçoritë numerike ashtu edhe me ato kategorike dhe mund të trajtojë një numër të madh të variablave hyrëse pa u përshtatur shumë.
-
 
 *E qëndrueshme ndaj Overfitting:* Random Forest është më pak i prirur ndaj mbi përshtatjes në krahasim me decision trees. Duke trajnuar shumë pemë në nëngrupe të ndryshme të të dhënave dhe duke mesatarizuar parashikimet e tyre, zvogëlon rrezikun e përshtatjes së tepërt ndaj zhurmës në të dhënat e trajnimit.
 
@@ -619,6 +706,23 @@ avantazheve që ofron ky algoritem:
 *Rëndësia e veçorive:* Random Forest ofron një masë të rëndësisë së veçorive, e cila tregon kontributin e çdo veçori në performancën parashikuese të modelit. Ky informacion mund të jetë i dobishëm për zgjedhjen e veçorive dhe për të kuptuar marrëdhëniet themelore në të dhëna.
 
 
- 
- 
+ # Algoritmi Logistic Regression  
+ *Logistic Regression*  është një algoritëm i mësimi supervizues që përdoret për detyra të klasifikimit, veçanërisht për klasifikimin binar. Kjo është një metodë shumë e përdorur në analizën e të dhënave për të parashikuar nëse një rast i ri i dhënë do të përket një kategori të caktuar ose jo. Regresioni logjistik përdor një funksion logaritmik për të llogaritur probabilitetin që një rast të përket një prej dy kategorive të mundshme.
 
+*Marrëdheniet lineare:* Në raste kur ka marrëdhënie lineare të qartë midis veçorëve dhe klasave, regresioni logjistik mund të tregojë saktesi të mirë
+
+*Modelon marrëdhënien midis variablave të pavarur dhe ndryshores së varur përmes funksionit logjistik* (i njohur gjithashtu si funksioni sigmoid). Funksioni sigmoid ka një kurbë në formë S që harton çdo numër me vlerë reale në një vlerë midis 0 dhe 1.
+
+*Kufiri i Vendimit:* Në regresionin logjistik, kufiri i vendimit është një probabilitet i pragut (zakonisht 0.5) mbi të cilin rezultati i parashikuar është klasa 1 dhe nën të cilën është klasa 0. Kufiri i vendimit përcaktohet nga koeficientët e mësuar gjatë trajnimit.
+
+# Algoritmi SVM  
+*SVM* synon të gjejë hiperplanin që ndan më mirë pikat e të dhënave në klasa të ndryshme. Në rastin e klasifikimit binar, ky hiperplan është ai që maksimizon diferencën, e cila është distanca midis hiperplanit dhe pikës më të afërt të të dhënave nga secila klasë, e njohur si vektorë mbështetës.  
+
+*Maksimizimi i margjinës* SVM jo vetëm që fokusohet në gjetjen e ndonjë hiperplani ndarës, por kërkon në mënyrë specifike atë me diferencën më të madhe. Kjo për shkak se një diferencë më e madhe zakonisht çon në përgjithësim më të mirë ndaj të dhënave të padukshme, duke reduktuar rrezikun e përshtatjes së tepërt (overfitting).  
+
+*Kernel* SVM mund të trajtojë detyrat e klasifikimit jolinear duke hartuar hapësirën fillestare të hyrjes në një hapësirë tipare me dimensione më të larta duke përdorur një funksion kernel. Ky hartim i lejon SVM të gjejë një kufi vendimtar linear në hapësirën me dimensione më të larta që korrespondon me një kufi vendimi jolinear në hapësirën origjinale. Funksionet e zakonshme të kernelit përfshijnë kernelin linear, polinomial, radial (RBF) dhe bërthamat sigmoide.  
+
+# Algoritmi Naive Bayes  
+*Naive Bayes* është një algoritëm i thjeshtë por efektiv klasifikimi i bazuar në teoremën e Bayes   të pavarësisë midis veçorive. Pavarësisht nga thjeshtësia e tij, klasifikuesit Naive Bayes shpesh performojnë mirë në praktikë, veçanërisht në klasifikimin e tekstit dhe fusha të tjera me të dhëna me dimensione të larta.  
+
+*Supozimi Naive Bayes*: Të gjitha tiparet janë të pavarura me kusht duke pasur parasysh etiketën e klasës. Kjo thjeshton llogaritjen e probabiliteteve dhe e bën algoritmin kompjuterikisht efikas, megjithëse ky supozim mund të mos jetë gjithmonë i vërtetë në të dhënat e botës reale.  
