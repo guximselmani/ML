@@ -597,6 +597,7 @@ X_scaled = scaler.fit_transform(X)
 
 Pas aplikimit i kemi gjeneru keto rezultate:  
 (Raporti i të dhënave testuese dhe trainuese për secilin algoritëm është marrë ashtu siç është dëshmuar në fazen II qe  përformon më mirë)  
+```
 *Random Forest Classifier:* test size = 0.2:  
   Accuracy: 0.7591849831541794  
   F1-score: 0.7687567401016793  
@@ -620,13 +621,13 @@ Pas aplikimit i kemi gjeneru keto rezultate:
   F1-score: 0.7345937364699091  
   Recall: 0.7785255429795044  
   Precision: 0.6953551912568307  
-
+```
 Nese largojmë disa kolona të tjera do të shohim një përformancë më të mirë të algoritmeve
 ```
 dataset.drop(columns=['engine_size_category', 'usb_port','stability_control','bluetooth'  ,'turbo','fuel_category'], inplace=True)
 
 ```
-
+```
 *Random Forest Classifier:* test size = 0.2:  
   Accuracy: 0.7627145836675758  
   F1-score: 0.7736801836266258  
@@ -650,7 +651,7 @@ dataset.drop(columns=['engine_size_category', 'usb_port','stability_control','bl
   F1-score: 0.7395939827661749  
   Recall: 0.7745487916794127  
   Precision: 0.7076579094466182  
-  
+ ``` 
  
 
  <img width="434" alt="Screenshot 2024-05-19 at 11 12 51" src="https://github.com/guximselmani/ML/assets/44524736/c445a1df-ba87-4c5d-bd11-19a51a684d60">
@@ -661,6 +662,7 @@ dataset.drop(columns=['engine_size_category', 'usb_port','stability_control','bl
 <img width="899" alt="Screenshot 2024-05-19 at 09 14 54" src="https://github.com/guximselmani/ML/assets/44524736/c9c45f7f-fd38-4aa3-a626-a164a0fb45a6">
 
 *Paraqitja e dallimeve statistikore para dhe pas aplikimit te smote për secilin rast të aplikimit te algoritmeve*
+```
 Random Forest Classifier:  
 Metric	Before SMOTE	After SMOTE	Change  
 Accuracy	0.7709	0.7627	-0.84%  
@@ -688,7 +690,9 @@ Accuracy	0.7109	0.7139	+0.34%
 F1-score	0.7569	0.7396	-2.85%  
 Recall	0.8584	0.7745	-9.93%  
 Precision	0.6770	0.7077	+4.34%  
-
+```
+Duke u bazuar ne këto rezultate kemi arritur të vërejmë se metrika accuracy tek Regresioni Logjistik është rritur mbi +8%, ndërsa precision +11.94%.
+Metrika accuracy tek SVM është rritur mbi +6%, ndërsa precision +7%.
 Duke u bazuar në këto krahasime më lart mund të themi se:  
 *Random Forest është i qëndrueshëm ndaj mosbalancimeve të klasave deri në një farë mase. Nëse grupi i të dhënave kishte imbalancë të moderuar të klasave dhe kufijtë e vendimit midis klasave ishin të mirëpërcaktuara, Random Forest mund të performonte mirë pa pasur nevojë për  SMOTE.  
 
@@ -701,6 +705,8 @@ Duke u bazuar në këto krahasime më lart mund të themi se:
 # Lakorja ROC para dhe pas largimit të kolonave dhe aplikimit të smote
 <img width="435" alt="Screenshot 2024-05-19 at 11 24 44" src="https://github.com/guximselmani/ML/assets/44524736/a68c8d25-1628-44ae-b70d-da2e98a1a581">
 <img width="435" alt="Screenshot 2024-05-19 at 11 26 45" src="https://github.com/guximselmani/ML/assets/44524736/d34003da-8892-4f4b-aa9f-fe7034cb4648">
+
+Pra pas ritrajtimit, sipas ROC vërejmë se ka përmirësim tē lehtë në parashikim tek Logistic Regression dhe SVM.
 
 # Algoritmi Random Forest Classifier
 *Random Forest* është një algoritëm që mund përdorët për detyra klasifikimi si në rastin tonë nëse është pronari i parë apo jo,
